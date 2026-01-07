@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.webfrey.monti.entities.Study;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
-public interface StudyRepository extends JpaRepository<Long, Study> {
+public interface StudyRepository extends JpaRepository<Study, Long> {
 }

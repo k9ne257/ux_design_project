@@ -3,7 +3,6 @@ package org.webfrey.monti.entities.forms;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -16,5 +15,5 @@ public class Questionaire {
     private Long id;
 
     @ManyToOne
-    private Questions questions;
+    private Question questions;
 }

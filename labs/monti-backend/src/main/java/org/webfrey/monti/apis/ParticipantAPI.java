@@ -8,7 +8,8 @@ import org.webfrey.monti.repositories.ParticipantRepository;
 import java.util.List;
 import java.util.UUID;
 
-@RestController("api/Participants/")
+@RestController
+@RequestMapping("/api/participants")
 @CrossOrigin("*")
 public class ParticipantAPI {
 
@@ -20,7 +21,7 @@ public class ParticipantAPI {
         return participantRepository.findAll();
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public Participant getParticipantById(@PathVariable UUID id) {
         return participantRepository.findById(id).orElse(null);
     }
@@ -35,7 +36,7 @@ public class ParticipantAPI {
         return participantRepository.save(participant);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public void deleteParticipant(@PathVariable UUID id) {
         participantRepository.deleteById(id);
     }
