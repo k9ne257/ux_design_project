@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+
+  mysql-backend:
+    image: mysql:8.0
+    container_name: mysql-backend
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: montiDB
+      MYSQL_USER: dbuser
+      MYSQL_PASSWORD: dbpass
+    volumes:
+      - backend_db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - app-net
+
+  # webfreyServices backend: resource server
+  monti-backend:
+    build: ./monti-backend
+    #    image: k9ne257/backend_webfreyservices:latest
+    container_name: monti-backend
+    restart: unless-stopped
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-backend:3306/montiDB
+      SPRING_DATASOURCE_USERNAME: dbuser
+      SPRING_DATASOURCE_PASSWORD: dbpass
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql-backend
+    networks:
+      - app-net
+
+  monti-frontend:
+    build: ./monti-frontend
+    #    image: k9ne257/frontend_tickethero:latest
+    container_name: monti-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - monti-backend
+    networks:
+      - app-net
+
+volumes:
+  backend_db_data:
+
+networks:
+  app-net:
+    driver: bridge

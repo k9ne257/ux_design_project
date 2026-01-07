@@ -1,7 +1,8 @@
 package org.webfrey.monti.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.webfrey.monti.entities.Bracelet;
 import org.webfrey.monti.entities.Study;
 
-public interface BraceletRepository extends JpaRepository<Long, Study> {
+public interface BraceletRepository extends JpaRepository<Bracelet,Long> {
 }
