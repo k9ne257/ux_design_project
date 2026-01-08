@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import MontiNavBar from "@/components/MontiNavBar";
+import NavSearchBar from "@/components/NavSearchBar";
+import NavUserArea from "@/components/NavUserArea";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +31,20 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="flex justify-around mx-2 mb-4 p-3 bg-zinc-50 dark:bg-black">
+          <Image
+            className="dark:invert"
+            src="/monti_logo_notext.png"
+            alt="monti logo"
+            width={100}
+            height={20}
+            priority
+          />
+          <MontiNavBar />
+          <NavSearchBar />
+          <NavUserArea />
+
+        </div>
         {children}
       </body>
     </html>
