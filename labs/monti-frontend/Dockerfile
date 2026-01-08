@@ -1,4 +1,15 @@
-FROM ubuntu:latest
-LABEL authors="Studium"
+FROM node:20-alpine
 
-ENTRYPOINT ["top", "-b"]
+WORKDIR /app
+
+# install deps
+COPY package*.json ./
+RUN npm ci
+
+# copy app + build
+COPY . .
+RUN npm run build
+
+EXPOSE 3000
+CMD ["npm", "dev"]
+#CMD ["npm", "start"]
