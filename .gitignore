@@ -1,0 +1,100 @@
+############################
+# General
+############################
+.DS_Store
+*.log
+*.pem
+
+############################
+# Java / Spring Boot / Maven
+############################
+HELP.md
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+.mvn/wrapper/maven-wrapper.jar
+
+############################
+# IDEs
+############################
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Eclipse / STS
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+
+# VS Code
+.vscode/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+############################
+# Node / Next.js
+############################
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+.next/
+out/
+build/
+coverage/
+
+############################
+# Python
+############################
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+############################
+# Environment variables
+############################
+.env
+.env.*
+!.env.example
+
+############################
+# Debug logs
+############################
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+############################
+# Vercel
+############################
+.vercel/
+
+############################
+# TypeScript
+############################
+*.tsbuildinfo
+next-env.d.ts
