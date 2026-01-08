@@ -1,6 +1,7 @@
 package org.webfrey.monti.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,7 @@ import lombok.NoArgsConstructor;
 public class AppStatus {
 
     @Id
-//    @GeneratedValue()
+    @GeneratedValue
     private Long id;
     private Long smartphoneId;
     private String model;
@@ -19,6 +20,4 @@ public class AppStatus {
     private String status;
     private String producer;
     private String montiVersion;
-
-
 }

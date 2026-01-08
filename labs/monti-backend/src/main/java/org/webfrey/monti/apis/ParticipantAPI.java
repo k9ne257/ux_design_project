@@ -2,8 +2,10 @@ package org.webfrey.monti.apis;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.webfrey.monti.entities.CreateParticipantRequest;
 import org.webfrey.monti.entities.Participant;
 import org.webfrey.monti.repositories.ParticipantRepository;
+import org.webfrey.monti.services.ParticipantService;
 
 import java.util.List;
 import java.util.UUID;
@@ -15,6 +17,8 @@ public class ParticipantAPI {
 
     @Autowired
     private ParticipantRepository participantRepository;
+    @Autowired
+    private ParticipantService participantService;
 
     @GetMapping
     public List<Participant> getParticipants() {
@@ -27,8 +31,8 @@ public class ParticipantAPI {
     }
 
     @PostMapping
-    public Participant createParticipant(Participant participant) {
-        return participantRepository.save(participant);
+    public Participant createParticipant(@RequestBody CreateParticipantRequest createParticipantRequest) {
+        return participantService.save(createParticipantRequest);
     }
 
     @PutMapping

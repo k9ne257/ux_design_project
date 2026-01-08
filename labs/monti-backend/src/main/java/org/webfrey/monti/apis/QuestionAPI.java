@@ -26,7 +26,7 @@ public class QuestionAPI {
     }
 
     @PostMapping
-    public Question createQuestion(Question question) {
+    public Question createQuestion(@RequestBody Question question) {
         return questionRepository.save(question);
     }
 
