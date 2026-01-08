@@ -26,7 +26,7 @@ public class BraceletAPI {
     }
 
     @PostMapping
-    public Bracelet createBracelet(Bracelet bracelet) {
+    public Bracelet createBracelet(@RequestBody Bracelet bracelet) {
         return braceletRepository.save(bracelet);
     }
 

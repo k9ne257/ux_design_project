@@ -26,7 +26,7 @@ public class StudyAPI {
     }
 
     @PostMapping
-    public Study createStudy(Study study) {
+    public Study createStudy(@RequestBody Study study) {
         return studyRepository.save(study);
     }
 

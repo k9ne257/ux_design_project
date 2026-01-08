@@ -26,7 +26,7 @@ public class QuestionaireAPI {
     }
 
     @PostMapping
-    public Questionaire createQuestionaire(Questionaire questionaire) {
+    public Questionaire createQuestionaire(@RequestBody Questionaire questionaire) {
         return questionaireRepository.save(questionaire);
     }
 
