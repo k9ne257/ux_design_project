@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/labs/monti-frontend/monti-frontend.iml" filepath="$PROJECT_DIR$/labs/monti-frontend/monti-frontend.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/ux_design_project.iml" filepath="$PROJECT_DIR$/.idea/ux_design_project.iml" />
     </modules>
   </component>
