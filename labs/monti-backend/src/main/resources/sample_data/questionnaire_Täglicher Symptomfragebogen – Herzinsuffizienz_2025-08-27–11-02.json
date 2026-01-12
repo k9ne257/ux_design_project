@@ -1,0 +1,117 @@
+{
+ "id": "72c5bc8a-7f47-495e-9a1b-c1ad1b87a142",
+ "groupId": "493020b2-77c9-494b-94bd-b18acb196c76",
+ "name": "Täglicher Symptomfragebogen – Herzinsuffizienz",
+ "description": "Täglicher Symptomfragebogen – Herzinsuffizienz",
+ "questions": [
+  {
+   "type": "smileyQuestion",
+   "subQuestions": [],
+   "shownAt": null,
+   "answeredAt": null,
+   "question": "Wie geht es Ihnen heute?",
+   "answer": null
+  },
+  {
+   "type": "singleChoiceQuestion",
+   "subQuestions": [
+    {
+     "type": null,
+     "subQuestions": [
+      {
+       "type": "singleChoiceQuestion",
+       "subQuestions": [],
+       "shownAt": null,
+       "answeredAt": null,
+       "question": "Bei welcher Aktivität tritt die Atemnot hauptsächlich auf?",
+       "options": [
+        {
+         "value": "bei alltäglichen Tätigkeiten, wie z.B. weniger als 2 Etagen Treppensteigen"
+        },
+        {
+         "value": "bei stärkerer Belastung, wie z.B. mehr als 2 Etagen Treppensteigen"
+        }
+       ],
+       "answer": null
+      }
+     ],
+     "subQuestionConditions": [
+      {
+       "value": "nur bei körperlicher Belastung"
+      }
+     ]
+    }
+   ],
+   "shownAt": null,
+   "answeredAt": null,
+   "question": "Haben Sie heute mehr Atemnot als gewöhnlich?",
+   "options": [
+    {
+     "value": "keine Atemnot"
+    },
+    {
+     "value": "nur bei körperlicher Belastung"
+    },
+    {
+     "value": "in Ruhe"
+    }
+   ],
+   "answer": null
+  },
+  {
+   "type": "yesNoQuestion",
+   "subQuestions": [],
+   "shownAt": null,
+   "answeredAt": null,
+   "question": "Sind Sie heute Nacht wegen Atemnot aufgewacht?",
+   "answer": null
+  },
+  {
+   "type": "yesNoQuestion",
+   "subQuestions": [],
+   "shownAt": null,
+   "answeredAt": null,
+   "question": "Haben Sie Ihr Kopfteil erhöht oder mehr als ein Kissen verwendet, um besser zu schlafen?",
+   "answer": null
+  },
+  {
+   "type": "yesNoQuestion",
+   "subQuestions": [],
+   "shownAt": null,
+   "answeredAt": null,
+   "question": "Im Fall von nächtlicher Atemnot, schlafen Sie mit erhöhtem Oberkörper?",
+   "answer": null
+  },
+  {
+   "type": "yesNoQuestion",
+   "subQuestions": [],
+   "shownAt": null,
+   "answeredAt": null,
+   "question": "Haben Sie heute „Herzstolpern“ oder unregelmäßigen Herzschlag bemerkt?",
+   "answer": null
+  },
+  {
+   "type": "yesNoQuestion",
+   "subQuestions": [],
+   "shownAt": null,
+   "answeredAt": null,
+   "question": "Sind Schwellungen an Füßen, Knöcheln oder Beinen aufgetreten oder haben diese zugenommen?",
+   "answer": null
+  },
+  {
+   "type": "yesNoQuestion",
+   "subQuestions": [],
+   "shownAt": null,
+   "answeredAt": null,
+   "question": "Haben Sie heute vermehrt ein Engegefühl in der Brust verspürt?",
+   "answer": null
+  }
+ ],
+ "canAnswerMultipleTimes": false,
+ "startDate": "2025-08-27 00:05:00.000",
+ "endDate": "2025-08-27 23:55:00.000",
+ "timeLeft": 46333989000,
+ "isExpired": false,
+ "isStarted": true,
+ "isAvailable": true
+}

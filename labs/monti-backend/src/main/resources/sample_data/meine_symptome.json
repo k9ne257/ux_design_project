@@ -1,0 +1,246 @@
+{
+ "name": "Meine Symptome",
+ "description": "Stündliche Symptomerfassung",
+ "questions": [
+  {
+   "type": "smileyQuestion",
+   "subQuestions": [],
+   "shownAt": null,
+   "answeredAt": null,
+   "question": "Wie bewerten Sie Ihr Wohlbefinden?",
+   "answer": null
+  },
+  {
+   "type": "numberQuestion",
+   "subQuestions": [],
+   "shownAt": null,
+   "answeredAt": null,
+   "question": "Wie aktiv sind Sie?",
+   "lowerBoundLabel": "gar nicht",
+   "upperBoundLabel": "sehr aktiv",
+   "min": 0.0,
+   "max": 10.0,
+   "step": 1.0,
+   "continuous": false,
+   "ticks": [],
+   "answer": null
+  },
+  {
+   "type": "numberQuestion",
+   "subQuestions": [],
+   "shownAt": null,
+   "answeredAt": null,
+   "question": "Wie erschöpft sind Sie?",
+   "lowerBoundLabel": "gar nicht",
+   "upperBoundLabel": "sehr erschöpft",
+   "min": 0.0,
+   "max": 10.0,
+   "step": 1.0,
+   "continuous": false,
+   "ticks": [],
+   "answer": null
+  },
+  {
+   "type": "yesNoQuestion",
+   "subQuestions": [
+    {
+     "type": null,
+     "subQuestions": [
+      {
+       "type": "numberQuestion",
+       "subQuestions": [],
+       "shownAt": null,
+       "answeredAt": null,
+       "question": "Wie stark ist Ihre Übelkeit?",
+       "lowerBoundLabel": "schwach",
+       "upperBoundLabel": "stark",
+       "min": 1.0,
+       "max": 10.0,
+       "step": 1.0,
+       "continuous": false,
+       "ticks": [],
+       "answer": null
+      }
+     ],
+     "subQuestionConditions": [
+      "yes"
+     ]
+    }
+   ],
+   "shownAt": null,
+   "answeredAt": null,
+   "question": "Haben Sie Übelkeit?",
+   "subQuestionCondition": null,
+   "answer": null
+  },
+  {
+   "type": "yesNoQuestion",
+   "subQuestions": [
+    {
+     "type": null,
+     "subQuestions": [
+      {
+       "type": "numberQuestion",
+       "subQuestions": [],
+       "shownAt": null,
+       "answeredAt": null,
+       "question": "Wie stark sind Ihre Schmerzen?",
+       "lowerBoundLabel": "schwach",
+       "upperBoundLabel": "stark",
+       "min": 1.0,
+       "max": 10.0,
+       "step": 1.0,
+       "continuous": false,
+       "ticks": [],
+       "answer": null
+      }
+     ],
+     "subQuestionConditions": [
+      "yes"
+     ]
+    }
+   ],
+   "shownAt": null,
+   "answeredAt": null,
+   "question": "Haben Sie Schmerzen?",
+   "subQuestionCondition": "yes",
+   "answer": null
+  },
+  {
+   "type": "yesNoQuestion",
+   "subQuestions": [
+    {
+     "type": null,
+     "subQuestions": [
+      {
+       "type": "numberQuestion",
+       "subQuestions": [],
+       "shownAt": null,
+       "answeredAt": null,
+       "question": "Wie stark ist Ihr Husten",
+       "lowerBoundLabel": "gering",
+       "upperBoundLabel": "sehr stark",
+       "min": 1.0,
+       "max": 10.0,
+       "step": 1.0,
+       "continuous": false,
+       "ticks": [],
+       "answer": null
+      }
+     ],
+     "subQuestionConditions": [
+      "yes"
+     ]
+    }
+   ],
+   "shownAt": null,
+   "answeredAt": null,
+   "question": "Haben Sie Husten?",
+   "subQuestionCondition": "yes",
+   "answer": null
+  },
+  {
+   "type": "yesNoQuestion",
+   "subQuestions": [
+    {
+     "type": null,
+     "subQuestions": [
+      {
+       "type": "singleChoiceQuestion",
+       "subQuestions": [],
+       "shownAt": null,
+       "answeredAt": null,
+       "question": "Wann tritt die Atemnot auf?",
+       "options": [
+        {
+         "value": "In Ruhe"
+        },
+        {
+         "value": "Geringe Belastung"
+        },
+        {
+         "value": "Starke Belastung"
+        }
+       ],
+       "answer": null
+      }
+     ],
+     "subQuestionConditions": [
+      "yes"
+     ]
+    }
+   ],
+   "shownAt": null,
+   "answeredAt": null,
+   "question": "Haben Sie Atemnot?",
+   "subQuestionCondition": "yes",
+   "answer": null
+  },
+  {
+   "type": "yesNoQuestion",
+   "subQuestions": [
+    {
+     "type": null,
+     "subQuestions": [
+      {
+       "type": "numberQuestion",
+       "subQuestions": [],
+       "shownAt": null,
+       "answeredAt": null,
+       "question": "Wie stark ist der Durchfall?",
+       "lowerBoundLabel": "schwach",
+       "upperBoundLabel": "sehr stark",
+       "min": 1.0,
+       "max": 10.0,
+       "step": 1.0,
+       "continuous": false,
+       "ticks": [],
+       "answer": null
+      }
+     ],
+     "subQuestionConditions": [
+      "yes"
+     ]
+    }
+   ],
+   "shownAt": null,
+   "answeredAt": null,
+   "question": "Haben Sie Durchfall?",
+   "subQuestionCondition": "yes",
+   "answer": null
+  },
+  {
+   "type": "yesNoQuestion",
+   "subQuestions": [
+    {
+     "type": null,
+     "subQuestions": [
+      {
+       "type": "anatomyFullBodyQuestion",
+       "subQuestions": [],
+       "shownAt": null,
+       "answeredAt": null,
+       "question": "Wo befindet sich der Hautausschlag?",
+       "answer": []
+      }
+     ],
+     "subQuestionConditions": [
+      "yes"
+     ]
+    }
+   ],
+   "shownAt": null,
+   "answeredAt": null,
+   "question": "Haben Sie einen Hautausschlag?",
+   "subQuestionCondition": "yes",
+   "answer": null
+  }
+ ],
+ "canAnswerMultipleTimes": false,
+ "startDate": "2024-05-15 00:08:00.000",
+ "endDate": "2024-05-15 23:55:00.000",
+ "timeLeft": 19975494958,
+ "isExpired": false,
+ "isStarted": true,
+ "isAvailable": true
+}

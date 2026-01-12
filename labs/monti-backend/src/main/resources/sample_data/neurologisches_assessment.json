@@ -1,0 +1,150 @@
+{
+    "canAnswerMultipleTimes": false,
+    "description": "Neurologisches Assessment bei Immuntherapie",
+    "startDate": "2024-10-12T15:00:00",
+    "endDate": "2024-10-12T19:00:00",
+    "id": "2e495598-25f5-4187-ab4f-41280d4a4f39",
+    "isAvailable": true,
+    "isExpired": false,
+    "isStarted": true,
+    "timeLeft": 30002697888,
+    "name": "Neurologisches Assessment",
+    "questions": [
+        {
+            "answeredAt": null,
+            "datesTowShow": [
+                "2024-05-15 15:34:57.288491",
+                "2023-01-01 00:00:00.000",
+                "2018-01-01 00:00:00.000",
+                "2024-01-01 00:00:00.000"
+            ],
+            "maxPoints": 1.0,
+            "numberOfDatesShown": 4,
+            "points": 0.0,
+            "shownAt": null,
+            "spread": 10,
+            "subQuestions": [],
+            "type": "dateYearNA",
+            "wrongAnswers": []
+        },
+        {
+            "answeredAt": null,
+            "maxPoints": 1.0,
+            "monthsToShow": [
+                5,
+                11,
+                3,
+                7
+            ],
+            "numberOfDatesShown": 4,
+            "points": 0.0,
+            "shownAt": null,
+            "subQuestions": [],
+            "type": "dateMonthNA",
+            "wrongAnswers": []
+        },
+        {
+            "answeredAt": null,
+            "datesTowShow": [
+                "2024-05-15 15:34:57.292727",
+                "2023-02-11 00:00:00.000",
+                "2023-01-10 00:00:00.000",
+                "2024-07-06 00:00:00.000"
+            ],
+            "numberOfDatesShown": 4,
+            "shownAt": null,
+            "subQuestions": [],
+            "type": "dateNA",
+            "wrongAnswers": []
+        },
+        {
+            "answer": null,
+            "answeredAt": null,
+            "hospital": [
+                "D\u00fcsseldorf",
+                "d\u00fcsseldorf"
+            ],
+            "maxPoints": 1.0,
+            "points": 0.0,
+            "shownAt": null,
+            "subQuestions": [],
+            "type": "hospitalNA"
+        },
+        {
+            "answeredAt": null,
+            "maxPoints": 1.0,
+            "numberPoints": [
+                {
+                    "number": 1.0,
+                    "x": 150.0,
+                    "y": 150.0
+                },
+                {
+                    "number": 2.0,
+                    "x": 20.0,
+                    "y": 30.0
+                },
+                {
+                    "number": 3.0,
+                    "x": 80.0,
+                    "y": 250.0
+                },
+                {
+                    "number": 4.0,
+                    "x": 250.0,
+                    "y": 270.0
+                }
+            ],
+            "points": 1.0,
+            "sequence": [
+                1.0,
+                2.0,
+                3.0,
+                4.0
+            ],
+            "shownAt": null,
+            "subQuestions": [],
+            "type": "connectNumbersNA",
+            "wrongAnswers": 0
+        },
+        {
+            "answeredAt": null,
+            "maxPoints": 3.0,
+            "pictures": [
+                "apple",
+                "doctor",
+                "smartphone"
+            ],
+            "points": 3.0,
+            "shownAt": null,
+            "subQuestions": [],
+            "type": "connectPictureWithText",
+            "wrongAnswers": 0
+        },
+        {
+            "answeredAt": null,
+            "cross": {
+                "x": 0,
+                "y": 0
+            },
+            "height": 3,
+            "maxPoints": 1.0,
+            "points": 1.0,
+            "shownAt": null,
+            "subQuestions": [],
+            "type": "clickOnCrossNA",
+            "visibleTime": 1000000,
+            "width": 3,
+            "wrongAnswers": 0
+        },
+        {
+            "answer": null,
+            "answeredAt": null,
+            "maxPoints": 1.0,
+            "points": 0.0,
+            "shownAt": null,
+            "subQuestions": [],
+            "type": "countBackwardsInTensNA"
+        }
+    ]
+}
