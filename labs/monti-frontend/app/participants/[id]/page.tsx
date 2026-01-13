@@ -1,21 +1,23 @@
-import { Participant} from "../columns"
-// import { useRouter } from "next/router";
+import { Participant } from "../columns"
+import {ParticipantSheet} from "@/components/participantSheet"
 
-export default async function ParticipantPage({params}: { params: Promise<{ id: string }> }){
-    // const router = useRouter();
-    const { id } = await params; 
-    const participantData = await fetch(`http://localhost:8080/api/participants/${id}`)
-    .then((res) => res.json())
-    .then((data: Participant[]) => data)
-    .catch(() => [] as Participant[]);
+type Props = {
+    params: Promise<{ id: string }>
+    triggerLabel?: string
+}
 
-    console.log("Participant Data:", participantData);
+export default async function ParticipantPage({params, triggerLabel = "Ansehen" }: Props) {
+    const { id } = await params;
+        const participantData = await fetch(`http://localhost:8080/api/participants/${id}`)
+            .then((res) => res.json())
+            .then((data: Participant[]) => data)
+            .catch(() => [] as Participant[]);
 
     return (
         <div>
-            <div>
-                <h2>Welcome to participant {id}</h2>
-            </div>
+            <h1>{participantData.firstName} {participantData.lastName}</h1>
+            {/* <ParticipantSheet participant={participantData}  triggerLabel={triggerLabel} /> */}
         </div>
-    );
+    )
+
 }

@@ -1,5 +1,6 @@
 "use client"
 
+import { ParticipantSheet } from "@/components/participantSheet"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import { ColumnDef } from "@tanstack/react-table"
@@ -119,7 +120,7 @@ export const participantColumns: ColumnDef<Participant>[] = [
 
             return (
                 <span
-                    className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-medium shadow shadow-xs shadow-black ${registrationStyles[styleKey] ?? "bg-gray-100 text-gray-800"
+                    className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-medium shadow shadow-sm shadow-black ${registrationStyles[styleKey] ?? "bg-gray-100 text-gray-800"
                         }`}
                 >
                     {label}
@@ -153,7 +154,7 @@ export const participantColumns: ColumnDef<Participant>[] = [
             }, [])
 
             return (
-                <div className={`flex row gap-2 items-center rounded-full ${styles} shadow shadow-xs shadow-black `}>
+                <div className={`flex row gap-2 items-center rounded-full ${styles} shadow shadow-sm shadow-black `}>
                     <span
                         className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-medium`}
                     >
@@ -190,7 +191,7 @@ export const participantColumns: ColumnDef<Participant>[] = [
             }, [])
 
             return (
-                <div className={`flex row gap-2 items-center rounded-full ${styles} shadow shadow-xs shadow-black `}>
+                <div className={`flex row gap-2 items-center rounded-full ${styles} shadow shadow-sm shadow-black `}>
 
                     <span
                         className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-medium`}
@@ -203,27 +204,42 @@ export const participantColumns: ColumnDef<Participant>[] = [
         },
     },
     {
-        accessorKey: "Fragebogen Erstellen",
+        accessorKey: "Aktion",
         header: ({ column }) => {
             return (
                 <span className="inline-flex items-center rounded-full px-3 py-1 text-l font-bold">
-                    Fragebogen Erstellen
+                    Aktion
                 </span>
             )
         },
         cell: ({ row }) => {
 
             return (
-                <Button variant="outline" className="ml-2 shadow shadow-xs shadow-black">
+                <div className="flex flex-row gap-2">
+                    <Button variant="outline" className="ml-2 shadow shadow-sm shadow-black">
 
-                    <Link
-                        href={`/participants/${row.original.id}`}
-                        className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-medium`}
-                    >
-                        Fragebogen Erstellen
-                    </Link>
-                </Button>
+                        <Link
+                            href={`/participants/${row.original.id}`}
+                            className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-medium`}
+                        >
+                            Fragebogen Erstellen
+                        </Link>
+                    </Button>
+                    {/* <Button variant="ghost" className="ml-2 border-0 shadow shadow-xs shadow-black"> */}
+                        <ParticipantSheet
+                            participant={row.original}
+                            triggerLabel={"Ansehen"}
+                            onSave={async (updated) => {
+                                // id required — ready for later:
+                                await fetch(`/api/participants/${updated.id}`, { method: "PUT", body: JSON.stringify(updated) })
+                                console.log("save", updated.id, updated)
+                            }}
+                        />
+                    {/* </Button> */}
+
+                </div>
             )
         },
     },
+
 ]
