@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge"
 import { Textarea } from "@/components/ui/textarea"
 import { Switch } from "@/components/ui/switch"
 import { useEffect } from "react"
+import { formatGermanDate } from "@/lib/utils"
 
 type Bracelet = {
     id: number
@@ -41,13 +42,6 @@ export type ParticipantDetails = {
     isRegistered: boolean
     bracelet?: Bracelet | null
     study?: Study | null
-}
-
-function formatDate(value?: string | null) {
-    if (!value) return "—"
-    const d = new Date(value)
-    if (Number.isNaN(d.getTime())) return value
-    return d.toLocaleString("de-DE")
 }
 
 function statusBadge(status?: Study["status"]) {
@@ -109,7 +103,7 @@ export function ParticipantSheet({ participant, onSave, triggerLabel = "Ansehen"
         try {
             setSaving(true)
             await onSave?.(draft)
-            
+
             setIsEditing(false)
             setOpen(false)
         } finally {
@@ -127,26 +121,29 @@ export function ParticipantSheet({ participant, onSave, triggerLabel = "Ansehen"
                 </SheetTrigger>
 
                 <SheetContent className="w-full sm:max-w-3xl p-3">
+                    {/* <SheetContent className="p-4"> */}
+                    <div className="border-b">
+                        <SheetHeader>
+                            <div className="flex items-start justify-between gap-4">
+                                <div className="min-w-0">
+                                    <SheetTitle className="truncate">
+                                        {participant.firstName} {participant.lastName}
+                                    </SheetTitle>
+                                    <SheetDescription className="mt-1">
+                                        Teilnehmer-ID: <span className="font-mono">{participant.id}</span>
+                                    </SheetDescription>
+                                </div>
 
-                    <SheetHeader>
-                        <div className="flex items-start justify-between gap-4">
-                            <div className="min-w-0">
-                                <SheetTitle className="truncate">
-                                    {participant.firstName} {participant.lastName}
-                                </SheetTitle>
-                                <SheetDescription className="mt-1">
-                                    Teilnehmer-ID: <span className="font-mono">{participant.id}</span>
-                                </SheetDescription>
+                                <div className="flex items-center gap-2">
+                                    <Label className="text-sm">Bearbeiten</Label>
+                                    <Switch checked={isEditing} onCheckedChange={setIsEditing} />
+                                </div>
                             </div>
+                        </SheetHeader>
+                    </div>
 
-                            <div className="flex items-center gap-2">
-                                <Label className="text-sm">Bearbeiten</Label>
-                                <Switch checked={isEditing} onCheckedChange={setIsEditing} />
-                            </div>
-                        </div>
-                    </SheetHeader>
-
-                    <div className="mt-6 space-y-6">
+                    {/* <div className="mt-6 space-y-6"> */}
+                    <div className="flex-1 overflow-y-auto space-y-6 mt-6 pb-10">
                         {/* Participant */}
                         <section className="space-y-3">
                             <div className="flex items-center justify-between">
@@ -268,11 +265,11 @@ export function ParticipantSheet({ participant, onSave, triggerLabel = "Ansehen"
                                     <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                                         <div className="space-y-1">
                                             <p className="text-xs text-muted-foreground">Start</p>
-                                            <p className="text-sm">{formatDate(draft.study.startDate)}</p>
+                                            <p className="text-sm">{formatGermanDate(draft.study.startDate)}</p>
                                         </div>
                                         <div className="space-y-1">
                                             <p className="text-xs text-muted-foreground">Ende</p>
-                                            <p className="text-sm">{formatDate(draft.study.endDate)}</p>
+                                            <p className="text-sm">{formatGermanDate(draft.study.endDate)}</p>
                                         </div>
                                     </div>
 
@@ -347,11 +344,11 @@ export function ParticipantSheet({ participant, onSave, triggerLabel = "Ansehen"
                                     <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                                         <div className="space-y-1">
                                             <p className="text-xs text-muted-foreground">Ausgegeben am</p>
-                                            <p className="text-sm">{formatDate(draft.bracelet.assignedAt)}</p>
+                                            <p className="text-sm">{formatGermanDate(draft.bracelet.assignedAt)}</p>
                                         </div>
                                         <div className="space-y-1">
                                             <p className="text-xs text-muted-foreground">Zurückgegeben am</p>
-                                            <p className="text-sm">{formatDate(draft.bracelet.returnedAt)}</p>
+                                            {draft.bracelet.returnedAt && <p className="text-sm">{formatGermanDate(draft.bracelet.returnedAt)}</p>}
                                         </div>
                                     </div>
 

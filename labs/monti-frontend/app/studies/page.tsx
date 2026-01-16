@@ -9,12 +9,12 @@ export default async function Home() {
     .catch(() => [] as Study[]);
 
     return (
-        <div>
+        <div className="m-4">
             <div>
-                <h2>Welcome to Monti!</h2>
+                <h2 className="text-3xl font-black">Studien übersicht</h2>
             </div>
 
-            <div className="flex-col mb-10 mt-5 px-10 justify-center">
+            <div className="flex-col mb-10 mt-5 justify-center">
                 <DataTable columns={studyColumns} data={studyData} />
             </div>
         </div>

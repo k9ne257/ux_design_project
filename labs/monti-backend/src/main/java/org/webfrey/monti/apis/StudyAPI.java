@@ -2,8 +2,10 @@ package org.webfrey.monti.apis;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.webfrey.monti.entities.Participant;
 import org.webfrey.monti.entities.Study;
 import org.webfrey.monti.repositories.StudyRepository;
+import org.webfrey.monti.services.StudyService;
 
 import java.util.List;
 
@@ -13,31 +15,36 @@ import java.util.List;
 public class StudyAPI {
 
     @Autowired
-    private StudyRepository studyRepository;
+    private StudyService studyService;
 
     @GetMapping
-    public List<Study> getStudys() {
-        return studyRepository.findAll();
+    public List<Study> getStudies() {
+        return studyService.findAll();
     }
 
     @GetMapping("/{id}")
     public Study getStudyById(@PathVariable Long id) {
-        return studyRepository.findById(id).orElse(null);
+        return studyService.findById(id);
+    }
+
+    @GetMapping("/{id}/participants")
+    public List<Participant> getParticipantsByStudy(@PathVariable Long id) {
+        return studyService.getParticipantsByStudyId(id);
     }
 
     @PostMapping
     public Study createStudy(@RequestBody Study study) {
-        return studyRepository.save(study);
+        return studyService.save(study);
     }
 
     @PutMapping
     public Study updateStudy(Study study) {
-        return studyRepository.save(study);
+        return studyService.save(study);
     }
 
     @DeleteMapping("/{id}")
     public void deleteStudy(@PathVariable Long id) {
         // TODO null check before deleting
-        studyRepository.deleteById(id);
+        studyService.deleteById(id);
     }
 }

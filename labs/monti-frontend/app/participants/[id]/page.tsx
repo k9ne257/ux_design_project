@@ -15,7 +15,7 @@ export default async function ParticipantPage({params, triggerLabel = "Ansehen" 
 
     return (
         <div>
-            <h1>{participantData.firstName} {participantData.lastName}</h1>
+            {/* <h1>{participantData.firstName} {participantData.lastName}</h1> */}
             {/* <ParticipantSheet participant={participantData}  triggerLabel={triggerLabel} /> */}
         </div>
     )

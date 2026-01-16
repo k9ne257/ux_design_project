@@ -1,20 +1,34 @@
-import { Participant, participantColumns } from "./columns"
-import { DataTable } from "./data-table";
+import { Participant, participantColumns } from "./columns";
+import { Study } from "../columns"
 import { Button } from "@/components/ui/button";
 import ParticipantsCard from "@/components/participantsCard";
 import WarningMessageCard from "@/components/alertMessageCard";
+import { DataTable } from "@/app/participants/data-table";
 import AlertPanel from "@/components/alertPanel";
 
-export default async function ParticipantOverview() {
-    const participantData = await fetch(`http://localhost:8080/api/participants`)
+type Props = {
+    params: Promise<{ id: string }>
+    triggerLabel?: string
+}
+
+export default async function ParticipantPage({ params, triggerLabel = "Ansehen" }: Props) {
+    const { id } = await params;
+    // const participantData = "";
+    const participantData = await fetch(`http://localhost:8080/api/studies/${id}/participants`)
         .then((res) => res.json())
         .then((data: Participant[]) => data)
         .catch(() => [] as Participant[]);
 
+    const studyData = await fetch(`http://localhost:8080/api/studies/${id}`)
+        .then((res) => res.json())
+        .then((data: Study[]) => data)
+        .catch(() => [] as Study[]);
+
+    console.log(participantData)
     return (
         <div className="mx-4 p-4">
             <div>
-                <h1 className="text-5xl font-black">Welcome to Participants Overview</h1>
+                <h1 className="text-5xl font-black">Study Overview for {studyData.name}</h1>
             </div>
             <div className="flex flex-row gap-4 mt-4">
                 <Button variant="secondary" size="lg" className="shadow shadow-sm shadow-black">
@@ -41,4 +55,5 @@ export default async function ParticipantOverview() {
 
         </div>
     );
+
 }

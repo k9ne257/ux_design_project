@@ -18,7 +18,7 @@ export default function MontiNavBar() {
                 <NavigationMenuLink asChild>
                   <a
                     className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-4 no-underline outline-hidden transition-all duration-200 select-none focus:shadow-md md:p-6"
-                    href="/"
+                    href="/studies"
                   >
                     <div className="mb-2 text-lg font-medium sm:mt-4">
                       Studien Übersicht
@@ -31,7 +31,7 @@ export default function MontiNavBar() {
               </li>
               <li>
                 <NavigationMenuLink asChild>
-                  <Link href="">
+                  <Link href="/studies/create">
                     <div className="text-sm leading-none font-medium">Erstelle eine Studie</div>
                     <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
                       Starte eine neue Studie, um wertvolle Einblicke zu gewinnen.
@@ -41,7 +41,7 @@ export default function MontiNavBar() {
               </li>
               <li>
                 <NavigationMenuLink asChild>
-                <Link href="">
+                <Link href="/studies/special">
                   <div className="text-sm leading-none font-medium">Besondere Studien</div>
                   <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
                     Studie von VIPs :P.
@@ -60,7 +60,7 @@ export default function MontiNavBar() {
                 <NavigationMenuLink asChild>
                   <a
                     className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-4 no-underline outline-hidden transition-all duration-200 select-none focus:shadow-md md:p-6"
-                    href="/"
+                    href="/participants"
                   >
                     <div className="mb-2 text-lg font-medium sm:mt-4">
                       Teilnehmer Übersicht
@@ -73,7 +73,7 @@ export default function MontiNavBar() {
               </li>
               <li>
                 <NavigationMenuLink asChild>
-                  <Link href="">
+                  <Link href="/participants/create">
                     <div className="text-sm leading-none font-medium">Füge einen neuen Teilnehmer hinzu</div>
                     <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
                       Füge einen neuen Teilnehmer zu einer Studie hinzu.
@@ -83,7 +83,7 @@ export default function MontiNavBar() {
               </li>
               <li>
                 <NavigationMenuLink asChild>
-                <Link href="">
+                <Link href="/bracelets">
                   <div className="text-sm leading-none font-medium">Armbänder</div>
                   <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
                     Armbänder verwalten und zuordnen.
@@ -91,7 +91,7 @@ export default function MontiNavBar() {
                 </Link>
               </NavigationMenuLink>
               <NavigationMenuLink asChild>
-                <Link href="">
+                <Link href="/mobileApp">
                   <div className="text-sm leading-none font-medium">Mobile App</div>
                   <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
                     Übersicht zur Appstatus und versionen.

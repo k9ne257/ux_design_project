@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { ColumnDef } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"
+import Link from "next/link"
 
 export type Study = {
     id: string
@@ -22,7 +23,6 @@ const statusStyles: Record<string, string> = {
 export const studyColumns: ColumnDef<Study>[] = [
     {
         accessorKey: "name",
-        // header: "Studienname",
         header: ({ column }) => {
             return (
                 <Button
@@ -33,7 +33,20 @@ export const studyColumns: ColumnDef<Study>[] = [
                     <ArrowUpDown className="ml-2 h-4 w-4" />
                 </Button>
             )
-        }
+        },
+        cell: ({ row }) => {
+            const studyName = row.getValue("name") as string
+            const studyId = row.original.id
+            return (
+                <Button
+                    variant="ghost"
+                >
+                    <Link href={`/studies/${studyId}`}>
+                        {studyName}
+                    </Link>
+                </Button>
+            )
+        },
     },
     {
         accessorKey: "status",

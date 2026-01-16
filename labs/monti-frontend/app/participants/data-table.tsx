@@ -56,7 +56,8 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div className="overflow-hidden rounded-md p-3 shadow shadow-xl shadow-black">
+    <div className="overflow-hidden border-0 rounded-lg p-3 shadow shadow-sm shadow-black">
+    {/* <div className=""> */}
       <div className="flex justify-end items-center py-2 px-4 gap-3">
         <Button
           className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-green-100 text-green-800 border border-green-800"
@@ -79,7 +80,7 @@ export function DataTable<TData, TValue>({
           className="max-w-sm"
         />
       </div>
-      <Table className="">
+      <Table className="w-full">
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>

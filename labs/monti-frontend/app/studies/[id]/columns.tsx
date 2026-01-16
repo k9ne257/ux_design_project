@@ -102,32 +102,6 @@ export const participantColumns: ColumnDef<Participant>[] = [
         },
     },
     {
-        accessorKey: "Studie",
-        header: ({ column }) => {
-            return (
-                <Button
-                    variant="ghost"
-                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-                >
-                    Studie
-                    <ArrowUpDown className="ml-2 h-4 w-4" />
-                </Button>
-            )
-        },
-        cell: ({ row }) => {
-            const studyName = row.original.study?.name
-            return (
-                <Button
-                    variant="ghost"
-                >
-                    <Link href={`/studies/${studyName}`}>
-                        {studyName}
-                    </Link>
-                </Button>
-            )
-        },
-    },
-    {
         accessorKey: "isRegistered",
         header: ({ column }) => {
             return (
